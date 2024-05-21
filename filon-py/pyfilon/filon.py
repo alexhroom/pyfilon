@@ -30,19 +30,22 @@ def filon_fun_sin(func: Callable, a: float, b: float, sin_coeff: float, mesh_siz
 
     Parameters
     ----------
-    func: Callable, float -> float
+    func: Callable, complex -> complex 
         The function f(x) over which to integrate.
-    interval: Tuple[float, float]
-        The interval to integrate over.
-    num_points: int
-        The number of datapoints at which the function is evaluated, including the
-        endpoints. Must be an odd integer greater than 1.
+    a: float
+        The lower limit of integration.
+    b: float
+        The upper limit of integration.
     sin_coeff: float
         The coefficient of the sine function in the integrand; `m` in 'sin(mx)'
+    mesh_size: int
+        The number of datapoints at which the function is evaluated, including the
+        endpoints. Must be an odd integer greater than 1.
+
 
     Returns
     -------
-    float
+    complex 
         The quadrature estimate of the integral func(x)*sin(mx) over the interval given.
     """
 
@@ -55,19 +58,21 @@ def filon_fun_cos(func: Callable, a: float, b: float, cos_coeff: float, mesh_siz
 
     Parameters
     ----------
-    func: Callable, float -> float
+    func: Callable, complex -> complex 
         The function f(x) over which to integrate.
-    interval: Tuple[float, float]
-        The interval to integrate over.
-    num_points: int
+    a: float
+        The lower limit of integration.
+    b: float
+        The upper limit of integration.
+    sin_coeff: float
+        The coefficient of the sine function in the integrand; `m` in 'sin(mx)'
+    mesh_size: int
         The number of datapoints at which the function is evaluated, including the
         endpoints. Must be an odd integer greater than 1.
-    cos_coeff: float
-        The coefficient of the cosine function in the integrand; `m` in 'cos(mx)'
 
     Returns
     -------
-    float
+    complex 
         The quadrature estimate of the integral func(x)*cos(mx) over the interval given.
     """
     ftab = [func(x) for x in linspace(a, b, mesh_size)]
