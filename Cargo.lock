@@ -23,6 +23,8 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "filon"
 version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c7db378e6897954a6782364c70a6aa59da4eac07b6971db68c292bae0399df2"
 dependencies = [
  "num-complex",
 ]
